@@ -17,3 +17,7 @@ insert into Ingredient (id, name, type) values ('JACK', 'Monterrey Jack', 'CHEES
 insert into Ingredient (id, name, type) values ('SLSA', 'Salsa', 'SAUCE');
 
 insert into Ingredient (id, name, type) values ('SRCR', 'Sour Cream', 'SAUCE');
+
+insert into User (username, password, enabled) values ('lucian', '12345', true);
+
+insert into User_Role (username, role) values ('lucian', 'ROLE_ADMIN');

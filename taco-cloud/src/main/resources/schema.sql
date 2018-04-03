@@ -11,7 +11,7 @@ create table if not exists Taco (
 );
 
 create table if not exists Taco_Ingredient (
-    tacoId bigint not null,
+  tacoId bigint not null,
 	ingredientId varchar(4) not null
 );
 
@@ -37,6 +37,21 @@ create table if not exists Taco_Order_Tacos (
 	orderId bigint not null,
 	tacoId bigint not null
 );
+
+create table User (
+	username varchar(50) not null,
+	password varchar(50) not null,
+	enabled boolean not null
+);
+
+create table if not exists User_Role (
+	username varchar(50) not null,
+	role varchar(50) not null
+);
+
+alter table User_Role
+	add foreign key (username) references User(username);
+
 
 alter table Taco_Order_Tacos
 	add foreign key (orderId) references Taco_Order(id);
